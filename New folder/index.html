@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Biblioteka</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="library/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="library/flatpickr/css/flatpickr.min.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="main-header">
+		<div class="container">
+			<div class="main-header-inner d-flex align-items-center justify-content-between">
+	            <div class="logo-sec">
+	            	<a href="#">
+						<img src="images/logo.png" alt="logo">
+					</a>
+	            </div>
+	            <div class="site-navigation justify-content-center align-items-end">
+					<div class="header-top-sec d-flex align-items-center">
+						<div class="social-icon">
+							<p>Znajdź nas na:</p>
+							<ul>
+								<li><a href="#" target="_blank"><img src="images/facebook.svg" alt=""></a></li>
+								<li><a href="#" target="_blank"><img src="images/Instagram.svg" alt=""></a></li>
+								<li><a href="#" target="_blank"><img src="images/bip-icon.svg" alt=""></a></li>
+							</ul>
+						</div>
+						<div class="search-form-wrap">
+							<p>Szukaj na stronie:</p>
+							<form class="search-form" role="search">
+						        <input class="form-control" type="search" placeholder="Wpisz szukaną frazę" aria-label="Search">
+						        <button class="btn-search" type="submit">Szukaj</button>
+						    </form>
+					    </div>
+						<div class="language-btn">
+					    	<ul>
+					    		<li class="menu-item-has-children">
+									<a href="#">PL</a>
+									<ul class="sub-menu">
+										<li><a href="#">EN</a></li>
+									</ul>
+								</li>
+					    	</ul>
+					    </div>
+						<div class="accessibility-icon">
+							<a href="#">
+								<img src="images/accessibility-icon.svg" alt="">
+							</a>
+						</div>
+						<div class="right-logo-sec">
+							<a href="#">
+								<div class="right-logo-inner">
+									<img class="d-none d-xl-block" src="images/euro-union-desktop.svg" alt="">
+									<img class="d-xl-none" src="images/euro-union-mobile.svg" alt="">
+								</div>
+							</a>
+						</div>
+					</div>
+	            	<div class="main-menu-wrap">
+		              	<ul class="d-flex align-items-center">
+							<li class="menu-item-has-children">
+								<a href="#">Katalog centralny</a>
+								<ul class="sub-menu">
+									<li><a href="#">Legimi</a></li>
+									<li><a href="#">IBUK Libra</a></li>
+									<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+									<li><a href="#">Academica</a></li>
+									<li><a href="#">Repozytorium DBP</a></li>
+								</ul>
+							</li>
+							<li class="current-menu-ancestor menu-item-has-children">
+								<a href="#">E-zasoby</a>
+								<ul class="sub-menu">
+									<li><a href="#">Legimi</a></li>
+									<li><a href="#">IBUK Libra</a></li>
+									<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+									<li><a href="#">Academica</a></li>
+									<li><a href="#">Repozytorium DBP</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">Dla czytelników</a>
+								<ul class="sub-menu">
+									<li><a href="#">Legimi</a></li>
+									<li><a href="#">IBUK Libra</a></li>
+									<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+									<li><a href="#">Academica</a></li>
+									<li><a href="#">Repozytorium DBP</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Kalendarz imprez</a>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">Dla bibliotekarzy</a>
+								<ul class="sub-menu">
+									<li><a href="#">Legimi</a></li>
+									<li><a href="#">IBUK Libra</a></li>
+									<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+									<li><a href="#">Academica</a></li>
+									<li><a href="#">Repozytorium DBP</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Godziny otwarcia</a>
+							</li>
+							<li>
+								<a href="#">Kontakt</a>
+							</li>
+							<li>
+								<a href="#">O bibliotece</a>
+							</li>
+					    </ul>
+					</div>
+	            </div>
+	            <div class="toggle-button menu-open">
+	                <span class="line one"></span>
+	                <span class="line two"></span>
+	                <span class="line three"></span>
+              	</div>
+	            <div class="mobile-menu-wrap">
+	            	<div class="mobile-menu-wrap-inner">
+						<div class="logo-hamburger">
+							<div class="logo-sec">
+								<a href="#">
+									<img src="images/logo.png" alt="logo">
+								</a>
+							</div>
+							<div class="toggle-button menu-close">
+								<span class="line one"></span>
+								<span class="line two"></span>
+								<span class="line three"></span>
+							</div>
+						</div>
+						<div class="mobile-menu-content">
+							<div class="search-form-wrap">
+								<p>Szukaj na stronie:</p>
+								<form class="search-form" role="search">
+									<input class="form-control" type="search" placeholder="Wpisz szukaną frazę" aria-label="Search">
+									<button class="btn-search" type="submit"><img src="images/right-arrow.svg" alt="search icon"></button>
+								</form>
+							</div>
+							<div class="mobile-menu">
+								<ul>
+									<li class="menu-item-has-children">
+										<a href="#">Katalog centralny</a>
+										<ul class="sub-menu">
+											<li><a href="#">Legimi</a></li>
+											<li><a href="#">IBUK Libra</a></li>
+											<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+											<li><a href="#">Academica</a></li>
+											<li><a href="#">Repozytorium DBP</a></li>
+										</ul>
+									</li>
+									<li class="current-menu-ancestor menu-item-has-children">
+										<a href="#">E-zasoby</a>
+										<ul class="sub-menu">
+											<li><a href="#">Legimi</a></li>
+											<li><a href="#">IBUK Libra</a></li>
+											<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+											<li><a href="#">Academica</a></li>
+											<li><a href="#">Repozytorium DBP</a></li>
+										</ul>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">Dla czytelników</a>
+										<ul class="sub-menu">
+											<li><a href="#">Legimi</a></li>
+											<li><a href="#">IBUK Libra</a></li>
+											<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+											<li><a href="#">Academica</a></li>
+											<li><a href="#">Repozytorium DBP</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Kalendarz imprez</a>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="#">Dla bibliotekarzy</a>
+										<ul class="sub-menu">
+											<li><a href="#">Legimi</a></li>
+											<li><a href="#">IBUK Libra</a></li>
+											<li><a href="#">Cyfrowy Dolny Śląsk</a></li>
+											<li><a href="#">Academica</a></li>
+											<li><a href="#">Repozytorium DBP</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Godziny otwarcia</a>
+									</li>
+									<li>
+										<a href="#">Kontakt</a>
+									</li>
+									<li>
+										<a href="#">O bibliotece</a>
+									</li>
+								</ul>
+							</div>
+							<div class="social-icon">
+								<p>Znajdź nas na:</p>
+								<ul>
+									<li><a href="#" target="_blank"><img src="images/facebook.svg" alt=""></a></li>
+									<li><a href="#" target="_blank"><img src="images/Instagram.svg" alt=""></a></li>
+									<li><a href="#" target="_blank"><img src="images/bip-icon.svg" alt=""></a></li>
+								</ul>
+							</div>
+							<div class="language-btn">
+								<ul>
+									<li class="wpml-ls-current-language"><a href="#">PL</a></li>
+									<li><a href="#">EN</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>	
+	            </div>
+	        </div>
+		</div>
+	</header>
+	<section class="top-banner-sec home-banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="banner-content">
+						<h1>Wiedza na wyciągnięcie ręki</h1>
+						<p>Przeszukuj katalog, odwiedzaj wydarzenia, korzystaj z zasobów – odkryj, co może dać Ci biblioteka.</p>
+						<a href="#" class="btn btn-primary">Dowiedz się więcej</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="banner-img">
+						<img src="images/main-banner.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<div class="announcement-block">
+		<div class="container">
+			<div class="announcement-sec">
+				<div class="icon"><img src="images/info-circle.svg" alt="icon"></div>
+				<p>W najbliższą sobotę (19.07.2025) biblioteka będzie nieczynna.</p>
+			</div>
+		</div>
+	</div>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<section class="search-block">
+		<div class="container">
+			<div class="search-block-inner gray-bg radius-40">
+				<div class="web-heading">
+					<h1>Szukaj w katalogu</h1>
+				</div>
+				<div class="search-form-wrap">
+					<form class="search-form" role="search">
+						<input class="form-control" type="search" placeholder="Wpisz szukaną frazę" aria-label="Search">
+						<button class="btn-search" type="submit">Szukaj</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<section class="home-event-block">
+		<div class="container">
+			<div class="home-event-b-inner d-flex flex-column read-more-position">
+				<div class="web-heading">
+					<h1>Kalendarz wydarzeń</h1>
+				</div>
+				<div class="event-search-bar gray-bg radius-40">
+					<div class="web-form">
+						<form>
+							<div class="form-inner">
+								<div class="fields-sec">
+									<div class="w-large">
+										<div class="form-group">
+											<input type="text" class="form-control" name="" placeholder="Wpisz szukaną frazę" aria-label="Search">
+										</div>
+									</div>
+									<div class="w-small">
+										<div class="form-group">
+											<input type="text" class="form-control" name="data_od" value="" placeholder="Data od" aria-label="Data od" onfocus="this.type='date'" onblur="this.type='text'">
+										</div>
+									</div>
+									<div class="w-small">
+										<div class="form-group">
+											<input type="text" class="form-control" name="data_do" value="" placeholder="Data do" aria-label="Data do" onfocus="this.type='date'" onblur="this.type='text'">
+										</div>
+									</div>
+									<div class="w-medium">
+										<div class="form-group">
+											<select class="form-select" aria-label="kategoria">
+												<option selected disabled value="">Kategoria</option>
+												<option value="">One</option>
+												<option value="">Two</option>
+												<option value="">Three</option>
+											</select>
+										</div>
+									</div>
+									<div class="w-medium">
+										<div class="form-group">
+											<select class="form-select" aria-label="Dla kogo">
+												<option selected disabled value="">Dla kogo</option>
+												<option value="">One</option>
+												<option value="">Two</option>
+												<option value="">Three</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="button-sec">
+									<button type="submit" class="btn btn-primary">Szukaj</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="home-event-sec">
+					<div class="calender-sec">
+						<div id="calendar"></div>
+						<button id="reset-calendar" class="btn btn-secondary reset-btn"><span><img src="images/refresh.svg" alt="icon"></span>Resetuj wyniki</button>
+					</div>
+					<div class="carousel-block">
+						<div class="owl-carousel owl-theme events-carousel-home">
+							<div class="item">
+								<div class="article-card">
+									<a href="#" class="article-card-inner d-flex flex-column">
+										<div class="featured-image double-image" style="background-image: url(images/event-img.png);">
+											<img src="images/event-img.png" alt="">
+											<div class="selected-cat">
+												<span>Dla dzieci</span>
+												<span>Dla Młodzieży</span>
+											</div>
+										</div>
+										<div class="article-card-content d-flex flex-column">
+											<div class="article-meta d-flex align-items-center">
+												<span><img src="images/calendar.svg" alt="icon">4 czerwca 2025</span>
+												<span><img src="images/clock.svg" alt="icon">17:00</span>
+											</div>
+											<div class="category-sec">
+                                                <span class="cat-color" style="background-color: #1A8D92;"></span>
+                                                <p>Zajęcia dla dzieci</p>
+                                            </div>
+											<div class="article-title">
+												<h3>Na pograniczu magii i medycyny - ziołolecznictwo w Górach Izerskich i Karkonoszach - wykład Karoliny Rybickiej</h3>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="item">
+								<div class="article-card">
+									<a href="#" class="article-card-inner d-flex flex-column">
+										<div class="featured-image double-image" style="background-image: url(images/event-img-2.png);">
+											<img src="images/event-img-2.png" alt="">
+											<div class="selected-cat">
+												<span>Dla dzieci</span>
+												<span>Dla Młodzieży</span>
+											</div>
+										</div>
+										<div class="article-card-content d-flex flex-column">
+											<div class="article-meta d-flex align-items-center">
+												<span><img src="images/calendar.svg" alt="icon">4 czerwca 2025</span>
+												<span><img src="images/clock.svg" alt="icon">17:00</span>
+											</div>
+											<div class="category-sec">
+                                                <span class="cat-color" style="background-color: #897B6B;"></span>
+                                                <p>Wystawa</p>
+                                            </div>
+											<div class="article-title">
+												<h3>Fenomeny Popkultury: Branża bez filtrów: kobiety w polskim gamedevie</h3>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="read-more-btn d-flex">
+					<a href="#" class="btn btn-primary">Wszystie wydarzenia</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<section class="resources-sec">
+		<div class="container">
+			<div class="resources-inner d-flex flex-column">
+				<div class="web-heading text-center">
+					<h1>E-ZASOBY</h1>
+				</div>
+				<div class="carousel-block">
+					<div class="owl-carousel owl-theme resources-carousel">
+						<div class="item">
+							<div class="resource-card">
+								<a href="#">
+									<div class="icon-sec">
+										<img src="images/Financial-advisor.svg" alt="">
+									</div>
+									<h3>Legimi</h3>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="resource-card">
+								<a href="#">
+									<div class="icon-sec">
+										<img src="images/Report.svg" alt="">
+									</div>
+									<h3>IBUK Libra</h3>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="resource-card">
+								<a href="#">
+									<div class="icon-sec">
+										<img src="images/Verified-user.svg" alt="">
+									</div>
+									<h3>Cyfrowy Dolny Śląsk</h3>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="resource-card">
+								<a href="#">
+									<div class="icon-sec">
+										<img src="images/Positive-dynamic-report.svg" alt="">
+									</div>
+									<h3>Academica</h3>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="resource-card">
+								<a href="#">
+									<div class="icon-sec">
+										<img src="images/Global-business-mail.svg" alt="">
+									</div>
+									<h3>Repozytorium DBP</h3>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</section>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<section class="home-announcements-block">
+		<div class="container">
+			<div class="announcements-b-inner d-flex flex-column read-more-position">
+				<div class="web-heading">
+					<h1>Komunikaty</h1>
+				</div>
+				<div class="announcements-b-wrap d-flex flex-row">
+					<div class="card-large">
+						<div class="article-card">
+							<a href="#" class="article-card-inner d-flex flex-column">
+								<div class="featured-image">
+									<img src="images/ann-image.png" alt="">
+								</div>
+								<div class="article-card-content d-flex flex-column">
+									<div class="article-meta d-flex align-items-center">
+										<span>4 czerwca 2025</span>
+									</div>
+									<div class="article-title">
+										<h3>Anna Szpakowskia-Kujawska | Park Południowy pod Plafonem - fotorelacja z wernisażu</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="card-mini d-flex flex-column">
+						<div class="article-card horizontal-layout">
+							<a href="#" class="article-card-inner d-flex flex-column">
+								<div class="featured-image">
+									<img src="images/ann-image-2.png" alt="">
+								</div>
+								<div class="article-card-content d-flex flex-column">
+									<div class="article-meta d-flex align-items-center">
+										<span>4 czerwca 2025</span>
+									</div>
+									<div class="article-title">
+										<h3>Remont w American Corner 20 czerwca-11 lipca</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="article-card horizontal-layout">
+							<a href="#" class="article-card-inner d-flex flex-column">
+								<div class="featured-image">
+									<img src="images/ann-image-3.jpg" alt="">
+								</div>
+								<div class="article-card-content d-flex flex-column">
+									<div class="article-meta d-flex align-items-center">
+										<span>4 czerwca 2025</span>
+									</div>
+									<div class="article-title">
+										<h3>Dla dorosłych, Spotkanie klubowe, Dyskusyjny Klub Książki Kryminalnej "Zbrodnia we wtorek"</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="article-card horizontal-layout">
+							<a href="#" class="article-card-inner d-flex flex-column">
+								<div class="featured-image">
+									<img src="images/ann-image-3.jpg" alt="">
+								</div>
+								<div class="article-card-content d-flex flex-column">
+									<div class="article-meta d-flex align-items-center">
+										<span>4 czerwca 2025</span>
+									</div>
+									<div class="article-title">
+										<h3>Dla dorosłych, Spotkanie klubowe, Dyskusyjny Klub Książki Kryminalnej "Zbrodnia we wtorek"</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="read-more-btn d-flex">
+					<a href="#" class="btn btn-primary">Wszystie komunikaty</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<section class="library-Info-block">
+		<div class="container">
+			<div class="library-Info-b-inner d-flex flex-column gray-bg radius-40">
+				<div class="web-heading">
+					<h1>Informacje o bibliotece</h1>
+				</div>
+				<div class="carousel-block">
+					<div class="owl-carousel owl-theme library-Info-carousel">
+						<div class="item">
+							<div class="link-card">
+								<a href="#" class="link-card-inner">
+									<h2>Ankieta nt. godzin otwarcia</h2>
+									<div class="icon-sec icon-bg">
+										<img src="images/right-arrow.svg" alt="">
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="link-card">
+								<a href="#" class="link-card-inner">
+									<h2>Jak się zalogować?</h2>
+									<div class="icon-sec icon-bg">
+										<img src="images/right-arrow.svg" alt="">
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="link-card">
+								<a href="#" class="link-card-inner">
+									<h2>Godziny otwarcia i dojazd</h2>
+									<div class="icon-sec icon-bg">
+										<img src="images/right-arrow.svg" alt="">
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="link-card">
+								<a href="#" class="link-card-inner">
+									<h2>Jak się zapisać i wypożyczać?</h2>
+									<div class="icon-sec icon-bg">
+										<img src="images/right-arrow.svg" alt="">
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="link-card">
+								<a href="#" class="link-card-inner">
+									<h2>Ankieta nt. godzin otwarcia</h2>
+									<div class="icon-sec icon-bg">
+										<img src="images/right-arrow.svg" alt="">
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<section class="home-contact-block">
+		<div class="container">
+			<div class="contact-b-inner d-flex align-items-center">
+				<div class="contact-content">
+					<div class="web-heading">
+						<h1>Kontakt</h1>
+					</div>
+					<div class="contact-details">
+						<h3>Dolnośląska Biblioteka Publiczna</h3>
+						<p>im. Tadeusza Mikulskiego we Wrocławiu<br> 50-116 Wrocław, Rynek 58</p>
+						<ul>
+							<li>
+								<span>tel. <b>71 33 52 200 (centrala)</b></span>
+							</li>
+							<li>
+								<span>tel. <b>71 33 52 228 (całodobowy - portiernia)</b></span>
+							</li>
+							<li>
+								<span>fax <b>71 34-41-808</b></span>
+							</li>
+							<li>
+								<span>email: <b><a href="mailto:wbp@wbp.wroc.pl">wbp@wbp.wroc.pl</a></b></span>
+							</li>
+						</ul>
+						<div class="web-btn d-flex">
+							<a href="#" class="btn btn-primary">Czytaj więcej</a>
+						</div>
+					</div>	
+				</div>
+				<div class="map-sec">
+					<img src="images/map.png" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+	<section class="partners-block full-width-carousel">
+		<div class="container">
+			<div class="partners-b-inner">
+				<div class="carousel-block">
+					<div class="owl-carousel owl-theme partners-carousel">
+						<div class="item">
+							<div class="partner-logo">
+								<a href="#" class="partner-logo-inner">
+									<img src="images/partner-logo-1.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="partner-logo">
+								<a href="#" class="partner-logo-inner">
+									<img src="images/partner-logo-2.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="partner-logo">
+								<a href="#" class="partner-logo-inner">
+									<img src="images/partner-logo-3.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="partner-logo">
+								<a href="#" class="partner-logo-inner">
+									<img src="images/partner-logo-4.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="partner-logo">
+								<a href="#" class="partner-logo-inner">
+									<img src="images/partner-logo-5.png" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+	<footer>
+		<div class="container">
+			<div class="footer-top">
+				<div class="row">
+					<div class="col-xl-3 col-lg-6">
+						<div class="footer-col">
+							<div class="widget">
+								<div class="footer-logo">
+									<img src="images/footer-logo.png" alt="">
+								</div>
+								<h4>Dolnośląska Biblioteka Publiczna</h4>
+								<p>im. Tadeusza Mikulskiego we Wrocławiu 50-116 Wrocław, Rynek 58</p>
+								<div class="social-icon">
+									<ul>
+										<li><a href="#" target="_blank"><img src="images/facebook.svg" alt=""></a></li>
+										<li><a href="#" target="_blank"><img src="images/youtube.svg" alt=""></a></li>
+										<li><a href="#" target="_blank"><img src="images/Instagram.svg" alt=""></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-6">
+						<div class="footer-col">
+							<div class="widget">
+								<h4 class="widget-title">Biblioteka</h4>
+								<div class="footer-menu">
+									<ul>
+										<li class="current-menu-item"><a href="#">O nas</a></li>
+										<li><a href="#">Redakcja</a></li>
+										<li><a href="#">Standardy ochrony małoletnich</a></li>
+										<li><a href="#">Archiwum strony</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-6">
+						<div class="footer-col">
+							<div class="widget">
+								<h4 class="widget-title">Dla Czytelników</h4>
+								<div class="footer-menu">
+									<ul>
+										<li><a href="#">Katalog centralny</a></li>
+										<li><a href="#">E-zasoby</a></li>
+										<li><a href="#">Godziny otwarcia</a></li>
+										<li><a href="#">Kalendarz imprez</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-6">
+						<div class="footer-col">
+							<div class="widget">
+								<h4 class="widget-title">Ważne linki</h4>
+								<div class="footer-menu">
+									<ul>
+										<li><a href="#">Mapa strony</a></li>
+										<li><a href="#">Dane osobowe </a></li>
+										<li><a href="#">Pliki cookies</a></li>
+										<li><a href="#">Deklaracja Dostępności</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="footer-bottom-logos desktop-logo">
+					<div class="bottom-logo">
+						<a href="#">
+							<img src="images/footer-logo-1.svg" alt="">
+						</a>
+					</div>
+					<div class="bottom-logo">
+						<a href="#">
+							<img src="images/footer-logo-2.svg" alt="">
+						</a>
+					</div>
+					<div class="bottom-logo">
+						<a href="#">
+							<img src="images/footer-logo-3.svg" alt="">
+						</a>
+					</div>
+					<div class="logo-bdr"></div>
+					<div class="bottom-logo">
+						<a href="#">
+							<img src="images/2406_logo_puk_CF_FB_ 1.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+  	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+	<script src="library/owl-carousel/owl.carousel.min.js"></script>
+    <script src="library/jquery-validate/jquery.validate.min.js"></script>
+    <script src="library/flatpickr/js/flatpickr.js"></script>
+    <script src="library/flatpickr/js/pl.js"></script>
+  	<script src="js/scripts.js"></script>
+	
+	<script>
+        const events = [
+            '2025-07-28',
+            '2025-07-12',
+            '2025-07-17'
+        ];
+    </script>
+</body>
+</html>

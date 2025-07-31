@@ -1,0 +1,46 @@
+.announcement-block {
+	margin-bottom: 20px;
+}
+
+.announcement-block .block-toolbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.announcement-block .block-fields {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+
+/* Label styling */
+.announcement-block .custom-field label,
+.announcement-block .custom-field .components-base-control__label {
+	font-size: 13px;
+	font-weight: 500;
+	margin-bottom: 4px;
+	color: #1e1e1e;
+}
+
+/* Image preview — natural size */
+.announcement-block .custom-field img {
+	display: inline-block;
+    display: block;
+	max-width: auto;
+	max-height: 120px;
+	height: auto;
+	margin-top: 6px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+/* Button — no resizing */
+.announcement-block .custom-field .components-button {
+	width: auto;
+	padding: 6px 12px;
+	font-size: 13px;
+	font-weight: 500;
+}

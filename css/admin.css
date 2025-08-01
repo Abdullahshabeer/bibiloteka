@@ -44,3 +44,19 @@
 	font-size: 13px;
 	font-weight: 500;
 }
+.block-fields .add-item-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.block-fields label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.block-fields input[type="text"],
+.block-fields .components-text-control__input {
+  width: 100%;
+  
+}

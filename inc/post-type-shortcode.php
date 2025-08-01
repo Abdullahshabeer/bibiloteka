@@ -110,15 +110,12 @@ function homepage_new_section_shortcode($atts) {
                 </button>
             </div>
             <div class="carousel-block">
-                <div class="owl-carousel owl-theme events-carousel-home">
+                <div id="ajax-events" class="owl-carousel owl-theme events-carousel-home">
                     <?php
                        
                         $query = new WP_Query($atts);
 
                         if ($query->have_posts()) : ?>
-                            <div class="col-xl-8 col-md-6">
-                                <!-- AJAX Loaded Posts -->
-                                <div id="ajax-events" class="row">
                             <?php while ($query->have_posts()) : $query->the_post(); 
                                 // Get ACF date and time fields
                             $event_date_raw = get_field('date');   // ACF Date field
@@ -235,52 +232,110 @@ function publications_list_custom_post_type_handler($request) {
         'callback' => 'publications_list_custom_post_type_handler',
     ));
 });
-function homepage_new_section_shortcodef($atts) {
-    $atts = shortcode_atts(
-        array(
-            'post_type' => array('projektyinwestycyjne', 'projekty_leader'),
-            'posts_per_page' => 3,
-        ),
-        $atts
-    );
+function homepage_new_posts_section_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'post_type' => 'post',
+        'posts_per_page' => 4,
+    ), $atts);
+
+    $query = new WP_Query(array(
+        'post_type'      => $atts['post_type'],
+        'posts_per_page' => $atts['posts_per_page'],
+        'post_status'    => 'publish',
+    ));
 
     ob_start();
-?>
-    <div class="filter-sec d-flex align-items-center">
-        <div class="filter-btn d-flex">
-            <button type="button" class="btn btn-secondary filter-button" data-postype='projektyinwestycyjne'><?php _e('Projekty inwestycyjne ', 'bibiloteka') ?></button>
-            <button type="button" class="btn btn-primary filter-button"   data-postype='projekty_leader'><?php _e('Projekty leader', 'bibiloteka') ?> </button>
-        </div>
-    </div>
-    <!-- Posts Display Section -->
-    <div id="post-list" class="carousel-block">
-    <div class="loderdiv" style="display: none;"><span class="loader"></span></div>
-        <div class="owl-carousel owl-theme article-carousel">
-            <?php echo fetch_posts($atts['post_type'], $atts['posts_per_page']); ?>
-        </div>
-    </div>
-    <?php
+
+    if ($query->have_posts()) {
+        echo '<div class="announcements-b-wrap d-flex flex-row">';
+
+        $count = 0;
+
+        while ($query->have_posts()) {
+            $query->the_post();
+            $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full') ?: 'https://via.placeholder.com/600x400';
+            $date = get_the_date('j F Y');
+            $title = get_the_title();
+            $permalink = get_permalink();
+
+            if ($count === 0) {
+                // First post (large card)
+                ?>
+                <div class="card-large">
+                    <div class="article-card">
+                        <a href="<?php echo esc_url($permalink); ?>" class="article-card-inner d-flex flex-column">
+                            <div class="featured-image">
+                                <img src="<?php echo esc_url($image_url); ?>" alt="">
+                            </div>
+                            <div class="article-card-content d-flex flex-column">
+                                <div class="article-meta d-flex align-items-center">
+                                    <span><?php echo esc_html($date); ?></span>
+                                </div>
+                                <div class="article-title">
+                                    <h3><?php echo esc_html($title); ?></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-mini d-flex flex-column">
+                <?php
+            } else {
+                // Remaining posts (mini cards)
+                ?>
+                <div class="article-card horizontal-layout">
+                    <a href="<?php echo esc_url($permalink); ?>" class="article-card-inner d-flex flex-column">
+                        <div class="featured-image">
+                            <img src="<?php echo esc_url($image_url); ?>" alt="">
+                        </div>
+                        <div class="article-card-content d-flex flex-column">
+                            <div class="article-meta d-flex align-items-center">
+                                <span><?php echo esc_html($date); ?></span>
+                            </div>
+                            <div class="article-title">
+                                <h3><?php echo esc_html($title); ?></h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <?php
+            }
+
+            $count++;
+        }
+
+        // Close the mini card wrap if at least one mini card was rendered
+        if ($count > 1) {
+            echo '</div>'; // close .card-mini
+        }
+
+        echo '</div>'; // close .announcements-b-wrap
+        wp_reset_postdata();
+    } else {
+        echo '<p>Brak dostępnych postów.</p>';
+    }
 
     return ob_get_clean();
 }
-add_shortcode('homepage-new-shortcodef', 'homepage_new_section_shortcode');
+add_shortcode('homepage-new-posts-shortcode', 'homepage_new_posts_section_shortcode');
+
 
 
 /**
  * 
  * API endpoint for get_post_shortcode
  */
-function publications_list_custom_post_type_handlerf($request) {
+function publications_list_custom_news_post_type($request) {
     $params = $request->get_params();
-    $content = do_shortcode("[homepage-new-shortcodef post_type='{$params['postType']}' posts_per_page='{$params['postperpage']}' categories='{$params['selectedCategory']}' ]");
+    $content = do_shortcode("[homepage-new-posts-shortcode post_type='{$params['postType']}' posts_per_page='{$params['postperpage']}' categories='{$params['selectedCategory']}' ]");
     
 
     return rest_ensure_response(array('content' => $content));
 }
    add_action('rest_api_init', function () {
-    register_rest_route('blocks-preview-shortvodef/v1', '/homepage-new-post-shortcode-typef', array(
+    register_rest_route('blocks-preview-shortvodef/v1', '/homepage-new-post-type-shortcode-type', array(
         'methods' => 'POST',
-        'callback' => 'publications_list_custom_post_type_handlerf',
+        'callback' => 'publications_list_custom_news_post_type',
     ));
 });
 function fetch_posts($post_type = array('projektyinwestycyjne', 'projekty_leader'), $posts_per_page = 3, $category_id = 0) {

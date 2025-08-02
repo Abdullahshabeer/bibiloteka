@@ -11,17 +11,15 @@ if (have_posts()) {
         // ACF Fields
         $acf_date     = get_field('date');
         $acf_time     = get_field('time');
-        $acf_price    = get_field('cena');
-        $acf_location = get_field('miejsce');
+        $acf_price    = get_field('price');
+        $acf_location = get_field('location');
         $acf_more_info = get_field('more_info_link');
 
         // Formatted values
         $event_date_display = $acf_date ? date_i18n('j F Y (l)', strtotime($acf_date)) : '';
         $event_time_display = $acf_time ? date_i18n('H:i', strtotime($acf_time)) : '';
 
-        // Terms
-        $dla_kogo_terms = get_the_terms(get_the_ID(), 'dla_kogo');
-        $kategorie_terms = get_the_terms(get_the_ID(), 'wydarzen_categories');
+        $kategorie_terms = get_the_terms(get_the_ID(), 'Konkursy_categories');
 ?>
 <section class="top-banner-sec">
     <div class="container">
@@ -57,17 +55,6 @@ if (have_posts()) {
                         </div>
                         <div class="collapse show" id="more-info">
                             <div class="article-info-sec">
-
-                                <?php if ($dla_kogo_terms): ?>
-                                    <div class="article-info-row">
-                                        <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/images/user-tag.svg" alt="icon"></div>
-                                        <div class="content">
-                                            <span>Dla Kogo</span>
-                                            <p><?php echo esc_html(join(', ', wp_list_pluck($dla_kogo_terms, 'name'))); ?></p>
-                                        </div>
-                                    </div>
-                                <?php endif; ?>
-
                                 <?php if ($kategorie_terms): ?>
                                     <div class="article-info-row">
                                         <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/images/archive-tick.svg" alt="icon"></div>

@@ -212,7 +212,7 @@ function bibiloteka_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'bibiloteka_enqueue_scripts');
 
 
-add_action('wp_enqueue_scripts', 'bibiloteka_enqueue_scripts');
+
 function bibiloteka_admin_enqueue()
 {
     $current_screen = get_current_screen();
@@ -579,7 +579,7 @@ function custom_breadcrumbs() {
             if ($titles->length > 0) {
                 $fullTitle = $titles[0]->nodeValue;
                 // Remove site title and trim the result
-                $specificTitle = str_replace('| Punkt dla Przyrody', '', $fullTitle);
+                $specificTitle = str_replace('| biblioteka', '', $fullTitle);
                 return trim($specificTitle);
             }
         
@@ -593,12 +593,12 @@ function custom_breadcrumbs() {
                 
                 // Check if there is a parent page title in the URL
               $parent_page_title_second_last ='';
-                if (count($path_parts) > 3) {
-                    $parent_page_title_second_last = $path_parts[count($path_parts) - 3];
+                // if (count($path_parts) > 3) {
+                //     $parent_page_title_second_last = $path_parts[count($path_parts) - 3];
                   
-                    $third_last_url = home_url('/' . $parent_page_title_second_last . '/');
-                    $page_title = get_title_from_url($third_last_url);
-                }
+                //     $third_last_url = home_url('/' . $parent_page_title_second_last . '/');
+                //     $page_title = get_title_from_url($third_last_url);
+                // }
                  
                    if (count($path_parts) > 2) {
                     $parent_page_title_last = $path_parts[count($path_parts) - 2]; 

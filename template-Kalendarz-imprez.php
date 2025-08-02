@@ -114,12 +114,72 @@ if (have_posts()) :
                 </div>
                 
                     <?php
-                    $args = [
-                        'post_type'      => 'kalendarz-wydarzen',
-                        'posts_per_page' => 1,
-                        'paged'          => (get_query_var('paged')) ? get_query_var('paged') : 1,
-                    ];
-                    $query = new WP_Query($args);
+                    $search     = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';
+                    $data_od    = isset($_GET['data_od']) ? sanitize_text_field($_GET['data_od']) : '';
+                    $data_do    = isset($_GET['data_do']) ? sanitize_text_field($_GET['data_do']) : '';
+                    $category   = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
+                    $dla_kogo   = isset($_GET['dla_kogo']) ? sanitize_text_field($_GET['dla_kogo']) : '';
+                                    $args = [
+                            'post_type'      => 'kalendarz-wydarzen',
+                            'posts_per_page' => 11,
+                            'paged'          => (get_query_var('paged')) ? get_query_var('paged') : 1,
+                        ];
+
+                        // Search keyword
+                        if (!empty($search)) {
+                            $args['s'] = $search;
+                        }
+
+                        // Date meta query (assuming custom fields for 'data_od' and 'data_do')
+                        $meta_query = [];
+
+                        if (!empty($data_od)) {
+                            $meta_query[] = [
+                                'key'     => 'date', // Change to your actual ACF/meta key
+                                'value'   => $data_od,
+                                'compare' => '>=',
+                                'type'    => 'DATE'
+                            ];
+                        }
+
+                        if (!empty($data_do)) {
+                            $meta_query[] = [
+                                'key'     => 'date', // Change to your actual ACF/meta key
+                                'value'   => $data_do,
+                                'compare' => '<=',
+                                'type'    => 'DATE'
+                            ];
+                        }
+
+                        if (!empty($meta_query)) {
+                            $args['meta_query'] = $meta_query;
+                        }
+
+                        // Taxonomy filters (assuming custom taxonomies)
+                        $tax_query = [];
+
+                        if (!empty($category)) {
+                            $tax_query[] = [
+                                'taxonomy' => 'category', // Replace with actual taxonomy slug
+                                'field'    => 'slug',
+                                'terms'    => $category,
+                            ];
+                        }
+
+                        if (!empty($dla_kogo)) {
+                            $tax_query[] = [
+                                'taxonomy' => 'dla_kogo', // Replace with actual taxonomy slug
+                                'field'    => 'slug',
+                                'terms'    => $dla_kogo,
+                            ];
+                        }
+
+                        if (!empty($tax_query)) {
+                            $args['tax_query'] = $tax_query;
+                        }
+
+                        // Now run query
+                        $query = new WP_Query($args);
 
                     if ($query->have_posts()) : ?>
                         <div class="col-xl-8 col-md-6">
@@ -189,8 +249,8 @@ if (have_posts()) :
                                     </a>
                                 </div>
                             </div>
-                        <?php endwhile;
-                        wp_reset_postdata(); ?>
+                        <?php endwhile;?>
+                      
                           </div>
                               </div>
                                 <div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -224,7 +284,7 @@ if (have_posts()) :
                     endif;
                     ?>
                 </div>
-
+             <?php  wp_reset_postdata(); ?>
             <!-- Pagination -->
            
           

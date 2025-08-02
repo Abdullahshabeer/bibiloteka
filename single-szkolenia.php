@@ -19,7 +19,7 @@ if (have_posts()) {
         $event_date_display = $acf_date ? date_i18n('j F Y (l)', strtotime($acf_date)) : '';
         $event_time_display = $acf_time ? date_i18n('H:i', strtotime($acf_time)) : '';
 
-        $kategorie_terms = get_the_terms(get_the_ID(), 'Konkursy_categories');
+        $kategorie_terms = get_the_terms(get_the_ID(), 'Szkolenia_categories');
 ?>
 <section class="top-banner-sec">
     <div class="container">
@@ -124,15 +124,15 @@ if (have_posts()) {
         </div>
 
         <!-- Featured Events -->
-        <div class="featured-articles-sec">
-            <h2>Polecane Wpisy</h2>
+       <?php /*<div class="featured-articles-sec">
+            <h2>Polecane wydarzenia</h2>
             <div class="articles-wrap">
                 <div class="carousel-block">
                     <div class="owl-carousel owl-theme articles-carousel">
                         <?php
                         $featured_query = new WP_Query([
-                            'post_type' => 'konkursy',
-                            'posts_per_page' => 6,
+                            'post_type' => 'szkolenia',
+                            'posts_per_page' => 3,
                             'post__not_in' => [get_the_ID()]
                         ]);
                         while ($featured_query->have_posts()): $featured_query->the_post();
@@ -172,10 +172,10 @@ if (have_posts()) {
                     </div>
                 </div>
                 <div class="read-more-btn d-flex">
-                    <a href="<?php echo esc_url(get_post_type_archive_link('konkursy')); ?>" class="btn btn-primary">Wszystkie wydarzenia</a>
+                    <a href="<?php echo esc_url(get_post_type_archive_link('szkolenia')); ?>" class="btn btn-primary">Wszystkie wydarzenia</a>
                 </div>
             </div>
-        </div>
+        </div>*/?>
     </div>
 </main>
 <?php

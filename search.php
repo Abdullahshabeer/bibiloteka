@@ -54,20 +54,15 @@ $search_query = get_search_query();
                             <div class="col-xl-5">
                                 <div class="row">
                                     <!-- Example date filters (optional, can be removed) -->
-                                    <div class="col-xl-6 col-lg-6">
+                                    
+                                     <div class="col-xl-6 col-lg-6">
                                         <div class="form-group">
-                                            <select class="form-select" name="date_from">
-                                                <option value="">Data publikacji od</option>
-                                                <!-- Add your date range options here -->
-                                            </select>
+                                            <input type="text" class="form-control" name="date_from" value="" placeholder="Data publikacji od" aria-label="Data od" onfocus="this.type='date'" onblur="this.type='text'">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6">
                                         <div class="form-group">
-                                            <select class="form-select" name="date_to">
-                                                <option value="">Data publikacji do</option>
-                                                <!-- Add your date range options here -->
-                                            </select>
+                                            <input type="text" class="form-control" name="data_do" value="" placeholder="Data publikacji do" aria-label="Data do" onfocus="this.type='date'" onblur="this.type='text'">
                                         </div>
                                     </div>
                                 </div>
